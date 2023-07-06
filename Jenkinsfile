@@ -5,6 +5,8 @@ pipeline {
         registry = "beezell/demo-boot"
         registryCredential = 'docker-hub'
     }
+
+    stages {
         
         stage('Build Artifact') {
             steps {
