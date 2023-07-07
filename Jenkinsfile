@@ -32,6 +32,12 @@ pipeline {
           }
         }
         
+        stage('Sonar - SAST ') { //SAST : Static Analyse Security Test
+          steps {
+            sh "mvn clean verify sonar:sonar -Dsonar.projectKey=demo-boot -Dsonar.projectName='demo-boot' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_67452ffe55d59ed6e98b16ff546ff207199e5e40"
+          }
+        }
+        
         stage('Docker Build and Push') {
           steps {
             withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
