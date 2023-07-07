@@ -77,7 +77,7 @@ pipeline {
             	sh "docker stop $containerName || true"
             	sh "docker rm $containerName || true"
         		sh "docker rmi $registry:$BUILD_NUMBER"
-        		sh "docker rmi $(docker images -aq) -f"
+        		sh "docker rmi \$(docker images -aq) -f"
         	}
         }
     }
