@@ -7,7 +7,7 @@ pipeline {
         containerName = 'demo-app' //nom du conteneur
         appPort = '8080' 
         testPort = '8380'
-        prodIp = '13.38.227.42' // ip public de l instance de production sur aws
+        prodIp = '35.180.205.227' // ip public de l instance de production sur aws
         prodPort = '80'
     }
 
