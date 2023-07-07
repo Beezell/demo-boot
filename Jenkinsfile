@@ -54,8 +54,9 @@ pipeline {
         
         stage('Production env'){
         	steps {
-        		input 'Do you approve deployment ?'
-        		echo 'Going into production...'
+        		sh "docker -H 13.38.227.42 stop demo-app || true"
+        		sh "docker -H 13.38.227.42 rm demo-app || true"
+        		sh "docker -H 13.38.227.42 run -d -p 8080:8080 --name demo-app $registry:$BUILD_NUMBER"
         	}
         }
     }
