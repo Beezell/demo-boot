@@ -66,5 +66,6 @@ pipeline {
         		sh "docker -H 13.38.227.42 run -d -p 8080:8080 --name demo-app $registry:$BUILD_NUMBER"
 
         	}
+        }
     }
 }
